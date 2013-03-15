@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory 
+        android:title="Contact Podnutz"
+        android:key="first_category">
+        
+    <Preference
+            android:key="email_podnutz"
+            android:summary="Email the Hosts"
+            android:title="Email Android App Addicts"
+            >
+       <intent
+  android:action="android.intent.action.VIEW"
+  android:data="mailto:mail@podnutz.com?subject=Android App Addicts">
+  <extra android:name="android.intent.extra.TEXT" android:value="Sent from the Android App Addicts Companion App" />
+</intent>
+</Preference>
+
+        <Preference
+            android:key="call_podnutz"
+            android:summary="(707)-6-PODNUT"
+            android:title="Call the Show"
+            >
+       <intent
+  android:action="android.intent.action.VIEW"
+  android:data="tel:7076763688">
+ 
+</intent>
+</Preference>
+            
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="Contact Autumn Bomb"
+        android:key="second_category">
+        <Preference
+            android:key="email_autumnbomb"
+            android:summary="Contact Developer"
+            android:title="Email Autumn Bomb"
+            >
+       <intent
+  android:action="android.intent.action.VIEW"
+  android:data="mailto:info@autumnbomb.us?subject=Android App Addicts Companion">
+  <extra android:name="android.intent.extra.TEXT" android:value="Autumn Bomb Devs," />
+</intent>
+</Preference>
+
+                      <Preference
+            android:key="apps_autumnbomb"
+            android:summary="Check out more apps by Autumn Bomb Apps"
+            android:title="More from Autumn Bomb"
+            >
+       <intent
+  android:action="android.intent.action.VIEW"
+  android:data="https://play.google.com/store/apps/developer?id=Autumn+Bomb+Apps">
+  
+</intent>
+</Preference>
+</PreferenceCategory>
+                    <PreferenceCategory 
+        android:title="Extras"
+        android:key="third_category">
+                            
+
+           <Preference
+            android:key="ads_autumnbomb"
+            android:summary="Purchase Autumn Bomb Support"
+            android:title="Remove the Ads"
+            >
+       <intent
+  android:action="android.intent.action.VIEW"
+  android:data="http://goo.gl/4wLDD">
+  
+</intent>
+</Preference>
+
+
+    </PreferenceCategory>
+    
+</PreferenceScreen>

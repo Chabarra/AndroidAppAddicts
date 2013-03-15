@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+   
+        
+    <item
+        android:id="@+id/menu_item_share_action_provider_action_bar"
+        android:actionProviderClass="com.actionbarsherlock.widget.ShareActionProvider"
+        android:showAsAction="always"
+        android:title="Share" />
+    <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_action_gear"
+            android:actionProviderClass="us.autumnbomb.androidappaddicts.About"
+            android:title="About"
+            android:showAsAction="ifRoom|withText" />
+   
+
+</menu>

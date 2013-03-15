@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android App Addicts</string>
+    <string name="version">Version 3.6</string>
+    <string name="aaaLogodesc">Android App Addicts</string>
+    <string name="showfeed">Show Feed</string>
+    <string name="social">Social Links</string>
+    <string name="apps">Mentioned Apps</string>
+    <string name="podnutzapps">Google+ Community</string>
+    <string name="about">About</string>
+    <string name="license">View License</string>
+    <string name="apache">Copyright 2013 Autumn Bomb Apps\n\nLicensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
+    <string name="stevec">Steve Cherubino</string>
+    <string name="sean">Sean Johnson</string>
+    <string name="door">Steve McLaughlin</string>
+    <string name="eric">Eric Arduini</string>
+    <string name="share">Share</string>
+    
+    
+    <style name="ButtonText">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textColor">#ffffff</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_margin">3dp</item>
+    <item name="android:textSize">16dp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:shadowColor">#000000</item>
+    <item name="android:shadowDx">1</item>
+    <item name="android:shadowDy">1</item>
+    <item name="android:shadowRadius">2</item>
+    
+</style>
+    
+</resources>

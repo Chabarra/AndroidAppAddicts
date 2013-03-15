@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>RSS</title> 
+<!--
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />	
+<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
+
+<link rel="stylesheet" href="css-js/jquery.mobile-1.0a2.min.css" />	
+<link rel="stylesheet" href="css-js/app_mobile_cfultz_android.min.css" />
+<script src="css-js/jquery-1.4.4.min.js"></script>
+<script src="css-js/jquery.mobile-1.0a2.min.js"></script>
+<script src="css-js/jquery.ba-dotimeout.js"></script> 
+<script src="css-js/jquery.dst.js"></script> 
+  
+    <script type='text/javascript'>
+      function android(o){
+         var item = o.query.results.item;
+        var output = '';
+        var no_item=item.length;
+        for(var i=0;i<no_item;i++){
+          var title = item[i].title;
+          var link = item[i].link;
+          var description = item[i].description;
+          output += "<center><p><a href='" + link + "'>"+title+"</a><br>"+description+<br><a href='"+url+"'>View On G+</a><hr/></p></center>";      
+        }
+        document.getElementById('results').innerHTML = output;
+      }
+    </script>
+  </head>
+  <body>
+  <div data-role="page" data-theme="b" id="containerPage">
+  <div data-role="header">
+		<h1>Newest 20 Shows</h1>
+	</div>
+    <div data-role="content"> <div id='results'></div>
+    <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20feed%20where%20url%3D'http%3A%2F%2Ffeeds.feedburner.com%2FCalebFultzG'%20limit%201&format=json&callback=calebplus">
+	</script></div>
+</div>
+ 
+ </body>
+</html>
