@@ -33,16 +33,19 @@ import android.widget.Button;
 
 //Setup the name of the Class and make sure it implements the "OnClickListener"
 public class Home extends SherlockActivity implements OnClickListener{
-
+//Sets the community button on the "Home" class to allow the Google+ app to open
+//or to open the default browser to the G+ community page
 	Button community;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //This calls the Holo style action bar across all version of Android 
+        //(NEEDS ACTIONBAR SHERLOCK LIBRARY)
         getSupportActionBar().setHomeButtonEnabled(true);
-        
+        //sets view as main.xml
         setContentView(R.layout.main);
-        
+        //Setting up action for community button
 	      community = (Button) findViewById(R.id.community);
 		  community.setOnClickListener(new OnClickListener() {
 		      public void onClick(View arg0) {
@@ -51,13 +54,17 @@ public class Home extends SherlockActivity implements OnClickListener{
 		        startActivity(i);
 		      }
 		    });
-        
+        //This is a license call. This isn't completely "working" yet, but what it does
+		//is allows the application to check for the package name. Why is it here?
+		//It's for someone who purchases the support application to have features or
+		//in this case, remove the ads at the bottom of the application
+		  
         boolean installed  =   appInstalledOrNot("us.autumnbomb.support");
         
         
         if(installed)
         {
-
+        //Just a java log print out. You can actually see this in the logcat :)
                   System.out.println("Shooo dang! You supported me! Thanks!");
                   
 
@@ -65,15 +72,16 @@ public class Home extends SherlockActivity implements OnClickListener{
         else
         {
         	
-        	//Request an ad
+        	//Request an ad if package isn't found installed on phone
         	AdView ad = (AdView) findViewById(R.id.adView);
         	ad.loadAd(new AdRequest());
+        	//Another logcat print out
             System.out.println("Techincally, you're still supporting, but through ads...");
             
         }
         
         
-    
+           //This will setup the other buttons on the application 
         
         View showfeed = findViewById(R.id.showFeed);
     	showfeed.setOnClickListener(this);
@@ -86,7 +94,7 @@ public class Home extends SherlockActivity implements OnClickListener{
     	
         
     }
-    
+         //This is a part of the earlier call. It's need to finish the check
     private boolean appInstalledOrNot(String uri)
     {
         PackageManager pm = getPackageManager();
@@ -107,7 +115,8 @@ public class Home extends SherlockActivity implements OnClickListener{
     
     
         
-    
+        //Sets up the button clicks for the additional button presses
+       //Calls the intents for the other classes and views
     	
 		@Override
 		public void onClick(View v) {
@@ -129,12 +138,15 @@ public class Home extends SherlockActivity implements OnClickListener{
 	      
 	      }
 	      }
+		
+		   //Setups up menu on the action bar   
+		
 		@Override
 	    public boolean onCreateOptionsMenu(Menu menu) {
 	        // Inflate your menu.
 	        getSupportMenuInflater().inflate(R.menu.menu, menu);
 
-	        
+	        //This is the "share" action on the action bar         
 	        // Set file with share history to the provider and set the share intent.
 	        MenuItem actionItem = menu.findItem(R.id.menu_item_share_action_provider_action_bar);
 	        ShareActionProvider actionProvider = (ShareActionProvider) actionItem.getActionProvider();
@@ -147,7 +159,7 @@ public class Home extends SherlockActivity implements OnClickListener{
 
 	        return true;
 		}
-		
+		//Selections on action bar
 		@Override
 		public boolean onOptionsItemSelected(MenuItem item) {
 		   // Handle item selection
@@ -162,7 +174,9 @@ public class Home extends SherlockActivity implements OnClickListener{
 		   }
 		}
 
-
+       //Setup what you want your share to say. This is the text version
+	   //All sharing intents can be found on:
+	   //http://android-developers.blogspot.com/2012/02/share-with-intents.html
 	    /**
 	     * Creates a sharing {@link Intent}.
 	     *
