@@ -24,10 +24,13 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
- 
+//Here we suppress the warning about Java being enabled. Remember, java is DANGEROUS if
+//not patched. This could allow exploits into our application, but rest assured, the majority
+//of the HTML/CSS/Javascript is within the application or on Google and Yahoo.
 @SuppressLint("SetJavaScriptEnabled")
 public class Apps extends Activity {
-    
+//Setting our WebView and ProgressDialog (the loading indicator)
+//The reason behind this is to define an "easier" readable version of WebView and PD.
 	WebView mWeb;
 	ProgressDialog mProgress;
     
@@ -46,7 +49,9 @@ public class Apps extends Activity {
 
         // add a WebViewClient for WebView, which actually handles loading data from web
         mWeb.setWebViewClient(new WebViewClient() {
-        	// load url
+        	// load url when clicked. this kicks it outside of our application. Try an
+        	// application from one of the early shows, it opens, but it stays in the view
+        	// instead of opening in the PlayStore or G+ applications
         	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
         	        if (url != null && url.startsWith("https://")) {
         	            view.getContext().startActivity(
@@ -69,7 +74,7 @@ public class Apps extends Activity {
         });
     
 
-        // set url for webview to load
+        // set url for webview to load. I'll explain more there.
         mWeb.loadUrl("file:///android_asset/apps.html");
         
     }

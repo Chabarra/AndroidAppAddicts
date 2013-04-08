@@ -13,9 +13,14 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
+  
 -->
 <resources>
 
+    <!-- This is pretty self explanitory. This sets up the strings of words for the 
+    rest of the application, so you can call the same resource multiple times instead
+    of having to retype out everything, everytime you want it somewhere else. -->
+    
     <string name="app_name">Android App Addicts</string>
     <string name="version">Version 3.6</string>
     <string name="aaaLogodesc">Android App Addicts</string>
@@ -32,7 +37,7 @@
     <string name="eric">Eric Arduini</string>
     <string name="share">Share</string>
     
-    
+    <!--  This actually sets up the nice Text that we see on our green buttons -->
     <style name="ButtonText">
     <item name="android:layout_width">fill_parent</item>
     <item name="android:layout_height">wrap_content</item>

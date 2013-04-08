@@ -28,14 +28,20 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class Social extends Activity{
-
+//Here is where we setup the buttons. I have five here, but you can add more or remove 
+//a few. I will say that it may be better with a scroll view, which may be being added
+//shortly to the layouts folder under the /res folder.
 	Button b1, b2, b3, b4, b5;
-	
+//Sets up the view
 	@Override
 	  public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.social);
-	    
+	   
+//Again, we setup the ability to remove the ads IF the end user has purchased a "support
+//application. This could also be used if your application requires an additional app to
+//to be installed, for example QR codes. This will make sure that app is installed before it
+//will run the code. This is a very basic example.
         boolean installed  =   appInstalledOrNot("us.autumnbomb.support");
         
         
@@ -53,16 +59,21 @@ public class Social extends Activity{
         	ad.loadAd(new AdRequest());
             System.out.println("Techincally, you're still supporting, but through ads...");
         }
+//Button One, Steve C.'s Google+ Page      
         
+//We're calling b1 from above to allow us to use a button to click and have an
+//intent or "action" to happen. Think IF/THEN
 	    b1 = (Button) findViewById(R.id.stevec);
 	    b1.setOnClickListener(new OnClickListener() {
-	      public void onClick(View arg0) {
+//This is our IF section
+	    	public void onClick(View arg0) {
 	        Intent i = new Intent("android.intent.action.VIEW");
 	        i.setData(Uri.parse("https://plus.google.com/105781017064950794185"));
+//This is our THEN section
 	        startActivity(i);
 	      }
 	    });
-	    
+//Button Two, Steve M.'s aka DoortoDoorGeek's Google+ Page	    
 	    b2 = (Button) findViewById(R.id.door);
 	    b2.setOnClickListener(new OnClickListener() {
 	      public void onClick(View arg0) {
@@ -71,6 +82,7 @@ public class Social extends Activity{
 	        startActivity(i);
 	      }
 	    });
+//Button Three, Sean's Google+ Page
 	    b3 = (Button) findViewById(R.id.sean);
 	    b3.setOnClickListener(new OnClickListener() {
 	      public void onClick(View arg0) {
@@ -79,6 +91,7 @@ public class Social extends Activity{
 	        startActivity(i);
 	      }
 	    });
+//Button Four, Eric's Google+ Page
 	    b4 = (Button) findViewById(R.id.eric);
 	    b4.setOnClickListener(new OnClickListener() {
 	      public void onClick(View arg0) {
@@ -90,6 +103,8 @@ public class Social extends Activity{
 
 		
 	}
+//Once again, this is for our "installation check" above. This just makes sure that
+//the application is installed.
 	
     private boolean appInstalledOrNot(String uri)
     {

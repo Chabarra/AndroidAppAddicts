@@ -20,6 +20,9 @@
     android:layout_gravity="center_horizontal"
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads">
 
+<!-- Image buttons for all the application. This is what we setup in the java earlier.
+Since this is a relative layout, you will see layout_below etc that tells you where
+the button will be in relation to other buttons in the view. -->
     <Button
         android:id="@+id/stevec"
         style="@style/ButtonText"
@@ -31,6 +34,7 @@
         android:background="@drawable/green"
         android:text="@string/stevec" />
 
+<!-- Image buttons for all the application. This is what we setup in the java earlier -->
     <Button
         android:id="@+id/door"
         style="@style/ButtonText"
@@ -43,6 +47,7 @@
         android:background="@drawable/green"
         android:text="@string/door" />
 
+<!-- Image buttons for all the application. This is what we setup in the java earlier -->
     <Button
         android:id="@+id/sean"
         style="@style/ButtonText"
@@ -53,6 +58,7 @@
         android:background="@drawable/green"
         android:text="@string/sean" />
 
+<!-- Image buttons for all the application. This is what we setup in the java earlier -->
     <Button
         android:id="@+id/eric"
         style="@style/ButtonText"
@@ -62,7 +68,7 @@
         android:layout_below="@+id/sean"
         android:background="@drawable/green"
         android:text="@string/eric" />
-
+<!-- Image buttons for all the application. This is what we setup in the java earlier -->
     <ImageView
         android:id="@+id/topStaff"
         android:layout_width="fill_parent"
@@ -71,7 +77,7 @@
         android:layout_centerHorizontal="true"
         android:scaleType="fitXY"
         android:src="@drawable/gplus" />
-    
+    <!-- Sets up the ad view -->
             <com.google.ads.AdView android:id="@+id/adView"
                            android:layout_width="fill_parent"
                            android:layout_height="wrap_content"

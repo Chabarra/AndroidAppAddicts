@@ -19,6 +19,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:background="#000">
+    
+    <!-- Simply calls the web view that we setup in the java earlier -->
+    
 
     <WebView
         android:id="@+id/webview"

@@ -2,7 +2,10 @@
 <html> 
 	<head> 
 	<title>RSS</title> 
+	
 <!--
+We comment out the style sheets and jquery libraries from pulling off of the web, which
+saves 1. resources for the app, and 2. DATA usage for us limited folk
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />	
 <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
@@ -13,7 +16,9 @@
 <script src="css-js/jquery.mobile-1.0a2.min.js"></script>
 <script src="css-js/jquery.ba-dotimeout.js"></script> 
 <script src="css-js/jquery.dst.js"></script> 
-  
+ <!-- This is what helps us parse the data coming from our Google Doc's spreadsheet.
+ I will be doing a full write up on CalebFultz.com and cross post it to AutumnBomb.us so
+ please stay tuned. For now, just think it's MAGIC! -->
     <script type='text/javascript'>
       function android(o){
         var item = o.query.results.item;
@@ -35,6 +40,7 @@
   <div data-role="header">
 		<h1>Newest 5 Shows</h1>
 	</div>
+	<!-- We parsed the csv doc into json through YQL. Write up to come -->
     <div data-role="content"> <div id='results'></div>
     <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20feed%20where%20url%3D'http%3A%2F%2Ffeeds.feedburner.com%2Fandroidappaddicts'%20limit%205&format=json&callback=android">
 	</script></div>

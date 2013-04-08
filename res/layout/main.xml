@@ -18,6 +18,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads">
+    
+    <!-- Image buttons for all the application. This is what we setup in the java earlier.
+Since this is a relative layout, you will see layout_below etc that tells you where
+the button will be in relation to other buttons in the view. -->
 
     <Button
         android:id="@+id/showFeed"

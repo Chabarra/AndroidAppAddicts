@@ -18,7 +18,8 @@ package us.autumnbomb.androidappaddicts;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-
+//Literally, this was copied and pasted from one of my old apps. This is DEPRCACTED for now.
+//As soon as more users start moving away from Gingerbread, we will go to fragments.
 
 public class Settings extends PreferenceActivity {
 	

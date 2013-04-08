@@ -24,7 +24,7 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
- 
+//See Apps.java comments for more information about what's going on here.
 @SuppressLint("SetJavaScriptEnabled")
 public class Feed extends Activity {
     
@@ -43,7 +43,6 @@ public class Feed extends Activity {
         // the init state of progress dialog
         mProgress = ProgressDialog.show(this, "Loading Newest Shows", "Please wait...");
 
-        // add a WebViewClient for WebView, which actually handles loading data from web
         // add a WebViewClient for WebView, which actually handles loading data from web
         mWeb.setWebViewClient(new WebViewClient() {
         	// load url

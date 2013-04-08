@@ -19,6 +19,8 @@
     android:layout_height="match_parent"
     tools:context=".Splash" 
     android:background="#000">
+    
+    <!-- Setups the views for the app splash screen. This is the logo you see on startup -->
 
     <ImageView
         android:id="@+id/aaaLogobig"
@@ -29,6 +31,9 @@
         android:layout_centerVertical="true"
         android:src="@drawable/aaatitle" />
 
+    <!-- This sets the version number directly below. This is a STRING and does NOT
+    pull from the AndroidManifest.xml version number, remember to set it. -->
+    
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"

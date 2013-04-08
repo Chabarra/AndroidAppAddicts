@@ -15,16 +15,20 @@
   limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
+<!-- Tells the device the name of the category -->
     <PreferenceCategory 
         android:title="Contact Podnutz"
         android:key="first_category">
-        
+        <!-- Expalins the prefrence to the device -->
     <Preference
             android:key="email_podnutz"
             android:summary="Email the Hosts"
             android:title="Email Android App Addicts"
             >
+            <!-- Sets up the intent or onclick action. This opens the default email
+            application (or browser if non are installed) sets the subject
+            and even adds a signature at the bottom. The rest of this doc follows the
+            same scheme, no need for any more comments -->
        <intent
   android:action="android.intent.action.VIEW"
   android:data="mailto:mail@podnutz.com?subject=Android App Addicts">
