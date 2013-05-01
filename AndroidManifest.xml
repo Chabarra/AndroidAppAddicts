@@ -18,8 +18,8 @@
 do PHP coding, this is our header -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="us.autumnbomb.androidappaddicts"
-    android:versionCode="15"
-    android:versionName="3.5.1" >
+    android:versionCode="17"
+    android:versionName="3.6.3" >
 <!-- This is the required "minimum" level of android as well as our target api -->
     <uses-sdk
         android:minSdkVersion="7"
@@ -29,8 +29,19 @@ do PHP coding, this is our header -->
     If these are removed, our app is COMPLETELY useless! -->     
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
+    <uses-permission android:name="com.android.vending.BILLING" />
+    
+   <!--   <service android:name="net.robotmedia.billing.BillingService" />
+<receiver android:name="net.robotmedia.billing.BillingReceiver">-->
+    <intent-filter>
+        <action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
+        <action android:name="com.android.vending.billing.RESPONSE_CODE" />
+        <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
+    </intent-filter>
+
 <!-- Setting up our views. We start with out Main application settings or the "header" of
 the application view -->  
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

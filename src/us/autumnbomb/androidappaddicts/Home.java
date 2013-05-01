@@ -22,8 +22,11 @@ import com.actionbarsherlock.widget.ShareActionProvider;
 //Imports for Admob ads
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 //Standard imports for Android Activity 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,10 +39,38 @@ public class Home extends SherlockActivity implements OnClickListener{
 //Sets the community button on the "Home" class to allow the Google+ app to open
 //or to open the default browser to the G+ community page
 	Button community;
+	public static final String PREFS_NAME = "AAAPrefsFile";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        boolean dialogShown = settings.getBoolean("dialogShown", false);
+
+        if (!dialogShown) {
+          // AlertDialog code here
+        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        	builder.setTitle("Attention Users");
+        	builder.setMessage("This will be one of the final updates that will be supporting Gingerbread. " +
+        			"We have conducted a poll that shows only a few users currently use Gingerbread. " +
+        			"There are a lot of ways to upgrade your device to the latest OS. " +
+        			"For the sake of innovation, we hope you understand. " +
+        			"Any questions, comments, concerns please contact the developers. Thanks!")
+        	       .setCancelable(false)
+        	       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        	           public void onClick(DialogInterface dialog, int id) {
+        	                //do things
+        	           }
+        	       });
+        	AlertDialog alert = builder.create();
+        	alert.show();
+
+          SharedPreferences.Editor editor = settings.edit();
+          editor.putBoolean("dialogShown", true);
+          editor.commit();    
+        }
+        
         //This calls the Holo style action bar across all version of Android 
         //(NEEDS ACTIONBAR SHERLOCK LIBRARY)
         getSupportActionBar().setHomeButtonEnabled(true);

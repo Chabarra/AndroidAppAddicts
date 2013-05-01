@@ -10,14 +10,13 @@ saves 1. resources for the app, and 2. DATA usage for us limited folk
 <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>-->
 
 <link rel="stylesheet" href="css-js/jquery.mobile-1.0a2.min.css" />	
-<link rel="stylesheet" href="css-js/app_mobile_cfultz_android.min.css" />
+<link rel="stylesheet" href="css-js/aaa.min.css" />
 <script src="css-js/jquery-1.4.4.min.js"></script>
 <script src="css-js/jquery.mobile-1.0a2.min.js"></script>
 <script src="css-js/jquery.ba-dotimeout.js"></script> 
 <script src="css-js/jquery.dst.js"></script> 
-   <!-- This is what helps us parse the data coming from our Google Doc's spreadsheet.
- I will be doing a full write up on CalebFultz.com and cross post it to AutumnBomb.us so
- please stay tuned. For now, just think it's MAGIC! -->
+<script src="css-js/search.js"></script>
+
     <script type='text/javascript'>
       function apps(o){
         var row = o.query.results.row;
@@ -27,24 +26,22 @@ saves 1. resources for the app, and 2. DATA usage for us limited folk
           var show = row[i].Show;
           var app = row[i].App_Name;
           var price = row[i].Price;
-	  var url = row[i].Link;
+	      var url = row[i].Link;
           var pic = row[i].Image;
-          output += "<center><p><a href='" + url + "'>"+app+"</a><br><img src='"+pic+"'><br>Show: "+show+"<br>Price: "+price+" <hr/></p></center>";      
+          var thumbs = row[i].Thumbs;
+          output += "<li><center><h2><a href='" + url + "'>"+app+"</a></h2><br><a href='" + url + "'><img src='"+pic+"'></a><p><br>Show: "+show+"<br>Price: "+price+" <br> <img src='"+thumbs+".png'></p><hr></center></li>";      
         }
         document.getElementById('results').innerHTML = output;
       }
     </script>
   </head>
   <body>
-  <div data-role="page" data-theme="b" id="containerPage">
-  <div data-role="header">
-		<h1>Apps</h1>
-	</div>
-	
-    <div data-role="content">
+ <div id="mentioned" data-role="page">
+
+        <div data-role="content">
 	<div id='results'></div>
 	<!-- We parsed the csv doc into json through YQL. Write up to come -->
-    <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D'https%3A%2F%2Fdocs.google.com%2Fspreadsheet%2Fpub%3Fkey%3D0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE%26single%3Dtrue%26gid%3D0%26output%3Dcsv'%20and%20columns%3D'Show%2CApp%20Name%2CLink%2CContributor%2CPrice%2CImage'&format=json&callback=apps">
+    <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D'https%3A%2F%2Fdocs.google.com%2Fspreadsheet%2Fpub%3Fkey%3D0AlOCAOm6LNzndDEtdDJPZFFJdFdDdmNCLUphNTZZcUE%26single%3Dtrue%26gid%3D0%26output%3Dcsv'%20and%20columns%3D'Show%2CApp%20Name%2CLink%2CContributor%2CPrice%2CImage%2CThumbs'&format=json&callback=apps">
 	</script></div>
 </div>
  
